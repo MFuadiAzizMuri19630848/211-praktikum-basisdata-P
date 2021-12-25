@@ -1,2 +1,1 @@
-UPDATE jabatan SET nama_jabatan = 'Magang' WHERE 
-jabatan.id = 5;
+DELETE FROM jabatan WHERE id = 6
