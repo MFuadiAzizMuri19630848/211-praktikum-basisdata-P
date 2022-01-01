@@ -1,1 +1,1 @@
-SELECT * FROM lokasi WHERE nama_lokasi like '%kota%';
+SELECT * FROM jabatan WHERE gapok_jabatan > 2200000;
