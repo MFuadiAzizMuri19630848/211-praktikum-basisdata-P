@@ -1,0 +1,1 @@
+SELECT * FROM pengguna WHERE username = 'admin' AND PASSWORD = MD5('admin');
