@@ -1,0 +1,15 @@
+SELECT K.id, K.nama_lengkap, 
+( 
+	SELECT J.nama_jabatan FROM jabatan_karyawan JK INNER JOIN jabatan J ON 	JK.jabatan_id = J.id WHERE karyawan_id = K.id 
+	ORDER BY JK.tanggal_mulai DESC LIMIT 1 
+) jabatan_terakhir, 
+( 
+	SELECT JK.tanggal_mulai FROM jabatan_karyawan JK WHERE karyawan_id - K.id ORDER BY JK.tanggal_mulai DESC LIMIT 1 
+) tanggal_mulai_terakhir, 
+( 
+	SELECT B.nama_bagian FROM bagian_karyawan bk INNER JOIN bagian B ON BK.bagian_id = B.id 
+	WHERE BK.karyawan_id = K.id 
+) bagian_terakhir, 
+( 
+	SELECT BK.tanggal_mulai FROM bagian_karyawan BK WHERE BK.karyawan_id = K.id 
+) tanggal_bagian_terakhir FROM karyawan K
