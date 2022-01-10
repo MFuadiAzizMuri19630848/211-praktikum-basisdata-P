@@ -1,0 +1,3 @@
+SELECT B.*, K.nama_lengkap nama_kepala_bagian 
+FROM bagian B
+INNER JOIN karyawan K ON B.karyawan_id = K.id
