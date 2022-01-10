@@ -1,0 +1,4 @@
+SELECT JK.*, K.nama_lengkap, J.nama_jabatan
+FROM jabatan_karyawan JK 
+INNER JOIN karyawan K ON K.id = JK.jabatan_id
+INNER JOIN jabatan J ON J.id = JK.jabatan_id
