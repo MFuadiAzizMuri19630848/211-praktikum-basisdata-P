@@ -1,4 +1,5 @@
-SELECT YEAR(tanggal) tahun, MONTH(tanggal) bulan,
+SELECT YEAR(tanggal) tahun, MONTH(tanggal) bulan, 
+karyawan_id,
 SUM(case when keterangan = 'HADIR' then 1 else 0 end) 
 jumlah_hadir,
 SUM(case when keterangan = 'SAKIT' then 1 else 0 end) 
@@ -14,5 +15,5 @@ end) jumlah_libur_nasional,
 SUM(case when keterangan = 'TANPA KETERANGAN' then 1 else 0 
 end) jumlah_tanpa_keterangan,
 COUNT(*) total
-FROM `presensi` WHERE karyawan_id = 4 AND YEAR(tanggal) = 
-2020 GROUP BY tahun, bulan
+FROM `presensi` WHERE YEAR(tanggal) = 2020 AND 
+MONTH(tanggal) = 11 GROUP BY tahun, bulan, karyawan_id
