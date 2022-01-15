@@ -1,0 +1,10 @@
+SELECT P.tahun, P.bulan,
+P.karyawan_id,
+ K.nama_lengkap,
+ P.gapok, 
+ P.tunjangan, 
+ P.uang_makan
+FROM penggajian P 
+LEFT JOIN karyawan K ON P.karyawan_id = K.id
+WHERE P.tahun = "2020" AND P.bulan = "12" AND karyawan_id = 
+3
