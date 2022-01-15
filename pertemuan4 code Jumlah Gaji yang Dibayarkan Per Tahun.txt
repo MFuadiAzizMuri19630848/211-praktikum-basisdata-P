@@ -1,0 +1,7 @@
+SELECT tahun, 
+ SUM(P.gapok) +
+ SUM(P.tunjangan) +
+ SUM(P.uang_makan)
+ jumlah_bayar_gaji
+FROM penggajian P 
+GROUP BY tahun;
